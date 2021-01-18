@@ -23,6 +23,23 @@ class Rectangle:
   def get_diagonal(self):
     return (self.width ** 2 + self.height ** 2) ** .5
 
+  def get_picture(self):
+    pic = ""
+    if self.width <= 50 and self.height <= 50:
+      
+      for i in range(self.height):
+        for j in range(self.width):
+          pic += "*"
+          if j == self.width-1:
+            pic += "\n"
+    else:
+      pic = "Too big for picture."
+
+    return pic
+
+  def get_amount_inside(self, rectangle):
+    return self.get_area() // rectangle.get_area()
+
 class Square(Rectangle):
   
   def __init__(self, length):
